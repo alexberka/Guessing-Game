@@ -1,12 +1,16 @@
 ﻿Console.Clear();
 string secretNumber = "42";
-Console.Write("Guess the secret number: ");
-string userGuess = Console.ReadLine() ?? "";
-if (userGuess == secretNumber)
+for (int i = 1; i <= 4; i++)
 {
-    Console.WriteLine("You got it!");
-}
-else
-{
-    Console.WriteLine("Boo");
+    Console.Write($"Guess the secret number (guess {i}/4): ");
+    string userGuess = Console.ReadLine() ?? "";
+    if (userGuess == secretNumber)
+    {
+        Console.WriteLine("You got it!");
+        break;
+    }
+    else
+    {
+        Console.WriteLine("Boo");
+    }
 }
