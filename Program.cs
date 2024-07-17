@@ -12,7 +12,24 @@ for (int i = 0; i < 4; i++)
     }
     else
     {
-        Console.WriteLine("Boo");
-        if (i == 3) { Console.WriteLine($"The number was {secretNumber}"); }
+        if (i == 3)
+        {
+            Console.WriteLine($"The number was {secretNumber}");
+        }
+        else if (int.TryParse(userGuess, out int guessCompare))
+        {
+            if (guessCompare > secretNumber)
+            {
+                Console.WriteLine("Too high!");
+            }
+            else
+            {
+                Console.WriteLine("Too low!");
+            }
+        }
+        else
+        {
+            Console.WriteLine("Boo");
+        }
     }
 }
