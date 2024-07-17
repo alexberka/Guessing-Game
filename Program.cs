@@ -1,4 +1,12 @@
 ﻿Console.Clear();
+string secretNumber = "42";
 Console.Write("Guess the secret number: ");
 string userGuess = Console.ReadLine() ?? "";
-Console.WriteLine($"You guessed {userGuess}");
+if (userGuess == secretNumber)
+{
+    Console.WriteLine("You got it!");
+}
+else
+{
+    Console.WriteLine("Boo");
+}
