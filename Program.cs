@@ -1,10 +1,11 @@
 ﻿Console.Clear();
-string secretNumber = "42";
-for (int i = 1; i <= 4; i++)
+Random secret = new();
+int secretNumber = secret.Next(1, 101);
+for (int i = 0; i < 4; i++)
 {
-    Console.Write($"Guess the secret number (guess {i}/4): ");
+    Console.Write($"Guess the secret number ({4 - i} {(i == 3 ? "guess" : "guesses")} remaining): ");
     string userGuess = Console.ReadLine() ?? "";
-    if (userGuess == secretNumber)
+    if (userGuess == secretNumber.ToString())
     {
         Console.WriteLine("You got it!");
         break;
@@ -12,5 +13,6 @@ for (int i = 1; i <= 4; i++)
     else
     {
         Console.WriteLine("Boo");
+        if (i == 3) { Console.WriteLine($"The number was {secretNumber}"); }
     }
 }
